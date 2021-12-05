@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+        <!--Meta tags necessárias-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Bootstrap import-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/0974fd88e1.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <script src="scripts.js"></script> 
+        
+        <title>Projeto Reginaldo</title>
+    </head>
+    <body style="background:#fff !important;" onload="loadInfo()">
+        <header>
+            <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light nav-pills">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true" onclick="window.location.href='#perfil'">Perfil</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-project-tab" data-bs-toggle="pill" data-bs-target="#proj" type="button" role="tab" aria-controls="pills-profile" aria-selected="false" onclick="window.location.href='#proj'">Projetos</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-exp-tab" data-bs-toggle="pill" data-bs-target="#exp" type="button" role="tab" aria-controls="pills-exp" aria-selected="false" onclick="window.location.href='#exp'">Experiência</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-repo-tab" data-bs-toggle="pill" data-bs-target="#pills-repo" type="button" role="tab" aria-controls="pills-repo" aria-selected="false" onclick="window.location.href='#repo'">Repositórios GitHub <i class="fab fa-github" style="color: black;"></i> </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-content-tab" data-bs-toggle="pill" data-bs-target="#pills-content" type="button" role="tab" aria-controls="pills-content" aria-selected="false" onclick="window.location.href='#content'">Conteúdo</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <form class="d-flex">
+                      <input id="search_input" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button id="search_btn" class="btn btn-outline-success" type="button"  onclick="search(1); return false;" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button>    
+                    </form>
+                  </div>
+                </div>
+              </nav>
+        </header>
+
+        <main style="margin: 0% 10%;" >
+            <section style="margin: 5% 0%;" id="perfil">
+                <div class="row">
+                    <div class="col profilePIC">
+                        <img class="profilePic" id="profilePic" src="src/images/perfil.jpeg">
+                        <!--p>sdlkfaçlkdjflçkasjfouwbvlkcj viopahpcovuaspfnlkj cpijbpiabnfkc cxijbap vlapij an c ibapsijd clkn lbwiubcakn lknlijb</p-->
+                    </div>
+                    <div class="col profileTXT">
+                        <div style="height: 80%;">
+                            <h1 class="border-bottom">Perfil de Reginaldo</h1>
+                            <p>Reginaldo é estudante de Ciência da Computação. Atualmente cursa a matéria Desenvolvimento de interfaces Web na modealidade de Ensino à distância da PUC-Minas. Desenvolveu tal projeto, baseado em bootstrap a fim de demonstrar o conhecimento trabalhado até o presente momento da realização de tal projeto.</p>
+                            <p>Tal projeto teve como objetivo apresentar algumas das ferramentas que podem ser utilizadas para a criação/modelagem de um website. Neste caso, estamos falando de Bootstrap. Utilizando-se do estilo de layout de GRID, é apresentado um website em formato de portifólio, para que sejam observados tais elementos e as habilidades do construtor do site.</p>
+                            <p>Devido à falta de experiência com as ferramentas, o wireframe disponibilizado foi usado como base, para que existisse um padrão a ser avaliado.</p>
+                        </div>
+                        <div>
+                            <h1>Redes Sociais</h1>
+                            <a style="color: #3b5998;" href="https://www.facebook.com/"><i class="fab fa-facebook fa-3x"></i></a>
+                            <a style="color: #1DA1F2;" href="https://www.twitter.com/"><i class="fab fa-twitter fa-3x"></i></a>    
+                            <a style="color: #E1306C;"  href="https://www.instagram.com/"><i class="fab fa-instagram fa-3x"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section style="margin: 5% 0%;" id="proj">
+                <div class="row">
+                    <div class="col-10">
+                        <h1 class="border-bottom">Projetos</h1>  
+                    </div>
+                    <div class="col btn-group">
+                        <select name="tipo">
+                            <option  selected disabled>Selecionar Projeto</option>
+                            <option>Desenvolvimento Web</option>
+                            <option>Aplicações Híbridas</option>
+                            <option>Grafos</option>
+                            <option>TCC</option>
+                        </select>
+                      </div>
+                </div>
+                <section class="row card_area">
+                    <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+                        <img src="src/images/web.jpg">
+                        <h3>Desenvolvimento Web</h3>
+                    </div>
+        
+                    <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+                        <img src="src/images/pwa.jpg">
+                        <h3>Aplicações Híbridas</h3>
+                    </div>
+        
+                    <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+                        <img src="src/images/grafos.jpg">
+                        <h3>Grafos</h3>
+                    </div>
+        
+                    <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+                        <img width=300px src="src/images/tcc.png.crdownload">
+                        <h3>TCC</h3>
+                    </div>
+                    
+                </section>
+            </section>
+
+            <section id="exp">
+                <hr class="featurette divider">
+                <div class="row featurette">
+                    <div class="col">
+                        <img style="align-self: flex-end;" src="src/images/web.jpg">
+                    </div>
+                    <div class="col">
+                        <h2 class="featurette header">Trabalho Prático - Boostrap</h2>
+                        <p>Trabalho desenvolvido para Desenvolvimento de Interfaces Web, para o segundo semestre de 2021.</p>
+                    </div>
+                </div>
+                <hr class="featurette divider">
+                <div class="row featurette">
+                    <div class="col">
+                        <img style="align-self: flex-end;" src="src/images/pwa.jpg">
+                    </div>
+                    <div class="col">
+                        <h2 class="featurette header">Trabalho Prático - PWA</h2>
+                        <p>Trabalho desenvolvido para Aplicações Híbridas, para o segundo semestre de 2021.</p>
+                    </div>
+                </div>
+                <hr class="featurette divider">
+                <div class="row featurette">
+                    <div class="col">
+                        <img style="align-self: flex-end;" src="src/images/grafos.jpg">
+                    </div>
+                    <div class="col">
+                        <h2 class="featurette header">Trabalho Prático - Grafos</h2>
+                        <p>Trabalho desenvolvido utilizando-se da Teoria de Grafos, para o primeiro semestre de 2019.</p>
+                    </div>
+                </div>
+                <hr class="featurette divider">
+                <div class="row featurette">
+                    <div class="col">
+                        <img style="align-self: flex-end; width: 350px;" src="src/images/tcc.png.crdownload">
+                    </div>
+                    <div class="col">
+                        <h2 class="featurette header">Trabalho de Conclusão de Curso</h2>
+                        <p>Trabalho desenvolvido utilizando-se da Teoria de Grafos, Inteligência Artificial e Algorítmos Genéticos Meméticos.</p>
+                    </div>
+                </div>
+                <hr class="featurette divider">
+            </section>
+
+            <section id="repo">
+                <h1 class="border-bottom">Repositórios GitHub</h1>
+                <div class="row g-4 py-5 row-cols-1 row-cols-lg-3" id="repositorios-wrapper">
+                    <div class="col d-flex align-items-start">
+                      <div class="icon-clircle bg-light text-dark flex-shrink-0 me-3">
+                        <i class="fas fa-folder-open fa-2x"></i>
+                      </div>
+                      <div>
+                        <h2>Reginaldo</h2>
+                        <p>Acesso aos arquivos dos projetos realizados pelo aluno Reginaldo.</p>
+                        <a href="http://www.github.com" class="btn btn-secondary">
+                          Ir para repositório
+                        </a>
+                      </div>
+                    </div>
+                    <div class="col d-flex align-items-start">
+                      <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
+                        <i class="fas fa-folder-open fa-2x"></i>
+                      </div>
+                      <div>
+                        <h2>Repositorio Auxiliar 1</h2>
+                        <p>Repositório utilizado para auxiliar no desenvolvimento dos projetos.</p>
+                        <a href="http://www.github.com" class="btn btn-secondary">
+                            Ir para repositório
+                        </a>
+                      </div>
+                    </div>
+                    <div class="col d-flex align-items-start">
+                      <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
+                        <i class="fas fa-folder-open fa-2x"></i>
+                      </div>
+                      <div>
+                        <h2>Repositório Auxiliar 2</h2>
+                        <p>Repositório utilizado para auxiliar no desenvolvimento dos projetos.</p>
+                        <a href="http://www.github.com" class="btn btn-secondary">
+                            Ir para repositório
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+            </section>
+
+            <section id="content">
+                
+                <div>
+                    <h1 class="border-bottom">
+                        Conteúdo
+                    </h1>
+                </div>
+                <div class="container">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                      <div class="col">
+                        <div class="card shadow-sm">
+                            <iframe width="100%" height="255" src="https://www.youtube.com/embed/T6yKp82k9vM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>         
+                          <div class="card-body">
+                            <p class="card-text">Vídeo introdutório à teoria de grafos.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <small class="text-muted">30 mins</small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="card shadow-sm">
+                            <iframe width="100%" height="255" src="https://www.youtube.com/embed/mVgrenJX5dI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+              
+                          <div class="card-body">
+                            <p class="card-text">Vídeo introdutório ao Bootstrap.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <small class="text-muted">8 mins</small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="card shadow-sm">
+                            <iframe width="100%" height="255" src="https://www.youtube.com/embed/X5hvluqlv5w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+              
+                          <div class="card-body">
+                            <p class="card-text">Vídeo demonstativo de um algoritmo memético em python.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <small class="text-muted">5 mins</small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+            </section>
+            
+			
+
+			<!-- Modal -->
+			<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog modal-lg">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Resultados da busca</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				  </div>
+				  <div id="modal_result" class="modal-body">
+					<ul class="repo-list">
+						<li>
+							<div><a href="">titulo</a></div>
+							<div>descricao</div>
+							<div>
+								<div>topico<div>
+								<div>stargazers_count</div>
+								<div>language<div>
+								<div>licence name<div>
+								<div>updatedAt<div>
+							</div>
+						</li>
+					</ul>
+				  </div>
+				  <div class="pagination">
+					<div id="anterior" class="margin-search-10 cursor_pointer">Anterior</div>
+					<div class="margin-search-10" id="paginaAtual">paginaAtual</div>
+					<div id="proximo" class="cursor_pointer">Proximo</div>
+				  </div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				  </div>
+				</div>
+			  </div>
+			</div>
+			
+        </main>
+
+        <footer class="py-3 my-4">
+            <p class="text-center text-muted">© 2021 PUC-Minas, Inc</p>
+          </footer>
+        <!--JS necessário para o Bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+        <!-- script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script -->
+    </body>
+</html>
